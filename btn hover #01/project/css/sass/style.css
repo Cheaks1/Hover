@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  height: 1080px;
+  background-color: #131313;
+}
+.container .button {
+  background-color: #5e17eb;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.container .button:after {
+  content: "";
+  height: 100%;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+.container .button:hover:after {
+  content: "";
+  height: 100%;
+  width: 99%;
+}
+.container .button:before {
+  content: "";
+  height: 0%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+.container .button:hover:before {
+  content: "";
+  height: 97%;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

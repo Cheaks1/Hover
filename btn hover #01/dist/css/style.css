@@ -1,0 +1,69 @@
+.container {
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 506.25px;
+    height: 900px;
+    background-color: #131313
+}
+
+.container .button {
+    padding: 15px 25px;
+    background-color: #5e17eb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer
+}
+
+.container .button::before {
+    content: "";
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.container .button::after {
+    content: "";
+    border-right: 2px solid;
+    border-left: 2px solid;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.container .button:hover:before {
+    width: 100%;
+    height: 100%
+}
+
+.container .button:hover:after {
+    width: 100%;
+    height: 100%
+}
