@@ -1,0 +1,66 @@
+@import "./helpers/mixin";
+$black-theme: #131313;
+$black-main:#5e17eb;
+$white-main:#ed669e;
+$green-color:rgb(77, 186, 135);
+.container {
+    @include centering;
+    @include dementions(900px, 506.25px);
+    background-color: $black-theme;
+    .btn_container {
+        @include dementions(57px, 150.86px);
+        @include centering;
+        .button {
+            padding: 15px 25px;
+            background-color: $black-main;
+            @include dementions(100%, 100%);
+            @include font(white, 18, 500);
+            text-align: center;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        .left {
+            @include abselute(0, null, 0);
+            @include dementions(0%, 100%);
+            border-left: 2px solid white;
+        }
+        .right {
+            @include abselute(null, 0, 0);
+            @include dementions(0%, 100%);
+            border-right: 2px solid white;
+        }
+        .top {
+            @include abselute(0, null, 0);
+            @include dementions(100%, 0);
+            border-top: 2px solid white;
+        }
+        .bottom {
+            @include abselute(null, 0, null, 0);
+            @include dementions(100%, 0);
+            border-bottom: 2px solid white;
+        }
+        .bottom,
+        .top,
+        .left,
+        .right {
+            transition: .2s;
+        }
+        &:hover {
+            .bottom {
+                @include dementions(100%, 100%);
+            }
+            .right {
+                transition-delay: .3s;
+                @include dementions(100%, 100%);
+            }
+            .top {
+                transition-delay: .6s;
+                @include dementions(100%, 100%);
+            }
+            .left {
+                transition-delay: .9s;
+                @include dementions(100%, 100%);
+            }
+        }
+    }
+}
