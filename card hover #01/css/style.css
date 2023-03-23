@@ -1,0 +1,111 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 506.25px;
+  height: 900px;
+  background-color: #131313;
+}
+.container .main_container {
+  transform-style: preserve-3d;
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .main_container .front,
+.container .main_container .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .main_container .front {
+  background-image: url("../img/front.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+.container .main_container .back {
+  background-image: url("../img/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.container .main_container .back .layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  opacity: 0.5;
+}
+.container .main_container .back .icons_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #dfeeeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  opacity: 0;
+}
+.container .main_container .back .icons_container i {
+  padding: 10px;
+  font-size: 18px;
+}
+.container .main_container .back .icons_container i:hover {
+  cursor: pointer;
+  background-color: azure;
+}
+.container .main_container:hover .front,
+.container .main_container:hover .discount {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+.container .main_container:hover .back {
+  transform: rotateY(180deg);
+  opacity: 1;
+}
+.container .main_container:hover .back .icons_container {
+  opacity: 1;
+}
+.container .main_container .discount {
+  background-color: #5e17eb;
+  font-size: 14pxpx;
+  font-weight: 500;
+  color: white;
+  display: inline;
+  padding: 5px 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 5;
+  transition: 0.2s;
+}
+.container .main_container .description {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  left: 5px;
+  bottom: -80px;
+}
+.container .main_container .description .stars i {
+  margin-right: 2px;
+}
+.container .main_container .description .stars i:not(:last-child) {
+  color: gold;
+}
