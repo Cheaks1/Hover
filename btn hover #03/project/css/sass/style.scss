@@ -1,0 +1,51 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import './helpers/mixin';
+.container {
+    background-color: white;
+    box-shadow: $box-shadow-sm;
+    font-family: 'Poppins', sans-serif;
+    @include dementions(700px, 450px);
+    @include centering;
+    .neon-effect {
+        position: relative;
+        @include centering;
+        //background-color: $gray-300;
+        padding: 10px 30px;
+        border: 2px solid $gray-900;
+        transition: .5s;
+        letter-spacing: 1px;
+        &:hover {
+            letter-spacing: 3px;
+            box-shadow: $box-shadow-sm;
+            color: $indigo-500;
+            background-color: $gray-200;
+            //border: 2px solid $gray-300;
+            &::before {
+                transform: translateX(80px);
+                background-color: $gray-200;
+            }
+            &::after {
+                transform: translateX(-80px);
+                background-color: $gray-200;
+            }
+        }
+        &::before {
+            content: "";
+            @include abselute(-2px, 15px);
+            @include dementions(2px, 15px);
+            transition: .5s;
+            background-color: white;
+        }
+        &::after {
+            content: "";
+            @include abselute(null, null, -2px, 15px);
+            @include dementions(2px, 15px);
+            transition: .5s;
+            background-color: white;
+        }
+    }
+}
