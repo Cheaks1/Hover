@@ -1,0 +1,47 @@
+    @import "../../../node_modules/bootstrap/scss/functions";
+    @import "../../../node_modules/bootstrap/scss/variables";
+    @import "../../../node_modules/bootstrap/scss/maps";
+    @import "../../../node_modules/bootstrap/scss/mixins";
+    @import "../../../node_modules/bootstrap/scss/utilities";
+    @import './helpers/mixin';
+    .container {
+        background-color:$gray-900;
+        box-shadow: $box-shadow-sm;
+        font-family: 'Poppins', sans-serif;
+        @include dementions(700px, 450px);
+        @include centering;
+       main{
+        position: relative;
+        
+        @include centering;
+        .blur_btn{
+            color: $gray-100;
+            background-color:rgba(225,225,225,.2);
+            backdrop-filter: blur(5px);
+            padding:  15px 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            box-shadow: $box-shadow-sm;
+            border-radius: 50px;
+            transition: .5s;
+            cursor: pointer;
+            &:hover{
+                letter-spacing: 3px;
+                color: $gray-300;
+                ~.hover{
+                @include dementions(100%,100%);
+                 box-shadow: 0 0 40px 10px $indigo-500;
+                 border-radius: 50px;
+            }}
+           
+        }
+        .hover{
+            @include centering;
+            @include dementions(1px,1px);
+            z-index: -1;
+            background-color: $indigo-500;       
+            box-shadow: 0 0 10px 10px $indigo-500;
+            transition: .5s;
+        }
+       }
+    }
